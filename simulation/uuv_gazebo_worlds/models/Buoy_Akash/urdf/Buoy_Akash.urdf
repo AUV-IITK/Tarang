@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.0-0-g9aa0fdb  Build Version: 1.5.7004.21443
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Buoy_Akash">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.90144 -2.1499 0.64058"
+        rpy="0 0 0" />
+      <mass
+        value="100000" />
+      <inertia
+        ixx="0.26367"
+        ixy="-1.7675E-15"
+        ixz="2.4259E-15"
+        iyy="0.26367"
+        iyz="2.6994E-15"
+        izz="0.10808" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Buoy_Akash/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Buoy_Akash/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Board_1">
+    <inertial>
+      <origin
+        xyz="0.325 -0.625 0.0015"
+        rpy="0 0 0" />
+      <mass
+        value="2.2297" />
+      <inertia
+        ixx="0.27619"
+        ixy="-1.4717E-18"
+        ixz="1.1796E-16"
+        iyy="0.069049"
+        iyz="6.1909E-18"
+        izz="0.34524" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Buoy_Akash/meshes/Board_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Buoy_Akash/meshes/Board_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Board_1"
+    type="fixed">
+    <origin
+      xyz="0.576444202565677 -1.96224364620002 1.26558435740853"
+      rpy="1.5707963267949 0 -1.0471975511966" />
+    <parent
+      link="base_link" />
+    <child
+      link="Board_1" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="Board_2">
+    <inertial>
+      <origin
+        xyz="-0.325 -0.625 0.0015"
+        rpy="0 0 0" />
+      <mass
+        value="2.2297" />
+      <inertia
+        ixx="0.27619"
+        ixy="-3.7054E-18"
+        ixz="-8.1185E-16"
+        iyy="0.069049"
+        iyz="1.1437E-17"
+        izz="0.34524" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Buoy_Akash/meshes/Board_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Buoy_Akash/meshes/Board_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Board_2"
+    type="fixed">
+    <origin
+      xyz="1.22644420256568 -1.96224364620002 1.26558435740853"
+      rpy="1.5707963267949 0 1.04719755119661" />
+    <parent
+      link="base_link" />
+    <child
+      link="Board_2" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="Board_3">
+    <inertial>
+      <origin
+        xyz="3.3307E-16 -0.625 0.56442"
+        rpy="0 0 0" />
+      <mass
+        value="2.2297" />
+      <inertia
+        ixx="0.27619"
+        ixy="-7.6997E-18"
+        ixz="-8.3656E-22"
+        iyy="0.069049"
+        iyz="-5.7022E-20"
+        izz="0.34524" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Buoy_Akash/meshes/Board_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Buoy_Akash/meshes/Board_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Board_3"
+    type="fixed">
+    <origin
+      xyz="0.901444202565677 -1.39632713374014 1.26558435740853"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Board_3" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <gazebo reference="Board_2">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="Board_1">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="Board_3">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="base_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo>
+    <plugin name="rotation_plugin" filename="libmodel_rotation.so">
+        <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+</robot>

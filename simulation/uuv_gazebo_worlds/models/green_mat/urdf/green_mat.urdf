@@ -1,0 +1,49 @@
+<robot
+  name="green_mat">
+  <link
+    name="green_mat">
+    <inertial>
+      <origin
+        xyz="-1.7764E-15 2.22070615158846E-16 0.0005"
+        rpy="0 0 0" />
+      <mass
+        value="43.2" />
+      <inertia
+        ixx="14.4000036"
+        ixy="0"
+        ixz="0"
+        iyy="230.4000036"
+        iyz="8.81716354322969E-16"
+        izz="244.8" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://green_mat/meshes/green_mat.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://green_mat/meshes/green_mat.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="green_mat">
+    <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo>
+    <static>true</static>
+</gazebo>
+</robot>

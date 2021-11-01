@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- Adding the thruster units with the macro created in snippets.xacro -->
+    <!--
+    Important:
+        - The thruster IDs must be given as integers and must be unique to each thruster unit
+        - The thruster pose in the <origin> block is relative to the body's center of mass. Be
+          aware that Gazebo does not use the SNAME convention per default.
+    -->
+
+  <xacro:property name="prop_mesh_file" value="file://$(find triton_description)/meshes/propeller.stl"/>
+
+  <!-- Thruster joint and link snippet -->
+  <xacro:macro name="thruster_macro"
+    params="robot_namespace thruster_id *origin">
+    <xacro:thruster_module_first_order_basic_fcn_macro
+      namespace="${robot_namespace}"
+      thruster_id="${thruster_id}"
+      mesh_filename="${prop_mesh_file}"
+      dyn_time_constant="0.05"
+      rotor_constant="0.00031">
+      <xacro:insert_block name="origin"/>
+    </xacro:thruster_module_first_order_basic_fcn_macro>
+  </xacro:macro>
+
+    <xacro:thruster_macro robot_namespace="${namespace}" thruster_id="0">
+        <origin xyz="0.175 0.220 0.1057" rpy="0 0 0" />
+    </xacro:thruster_macro>
+
+    <xacro:thruster_macro robot_namespace="${namespace}" thruster_id="1">
+        <origin xyz="0.175 -0.22130 0.10574" rpy="0 0 0" />
+    </xacro:thruster_macro>
+
+    <xacro:thruster_macro robot_namespace="${namespace}" thruster_id="2">
+    <origin xyz="-0.29794 -0.0052568 0.109151" rpy="0 0 ${-0.5*pi}" />
+    </xacro:thruster_macro>
+
+    <xacro:thruster_macro robot_namespace="${namespace}" thruster_id="3">
+    <origin xyz="-0.44134 0.13252 0.1205" rpy="0 ${-0.5*pi} 0" />
+    </xacro:thruster_macro>
+
+    <xacro:thruster_macro robot_namespace="${namespace}" thruster_id="4">
+    <origin xyz="-0.4422 -0.13063 0.1205" rpy="0 ${-0.5*pi} 0" />
+    </xacro:thruster_macro>
+
+    <xacro:thruster_macro robot_namespace="${namespace}" thruster_id="5">
+    <origin xyz="0.3500 0.000 0.12125" rpy="0 ${-0.5*pi} 0" />
+    </xacro:thruster_macro>
+
+</robot>

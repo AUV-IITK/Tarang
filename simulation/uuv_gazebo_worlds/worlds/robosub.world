@@ -1,0 +1,178 @@
+<?xml version="1.0" ?>
+<!-- Copyright (c) 2016 The UUV Simulator Authors.
+     All rights reserved.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<sdf version="1.5">
+    <world name="qual_robosub_arena">
+        <physics name="default_physics" default="true" type="ode">
+            <max_step_size>0.002</max_step_size>
+            <real_time_factor>1</real_time_factor>
+            <real_time_update_rate>500</real_time_update_rate>
+            <ode>
+                <solver>
+                    <type>quick</type>
+                    <iters>50</iters>
+                    <sor>0.5</sor>
+                </solver>
+            </ode>
+        </physics>
+        <scene>
+            <ambient>0.01 0.01 0.01 1.0</ambient>
+            <sky>
+                <clouds>
+                    <speed>12</speed>
+                </clouds>
+            </sky>
+            <shadows>1</shadows>
+            <fog>
+                <color>0.1 0.2 0.3 1.0</color>
+                <type>linear</type>
+                <density>0.001</density>
+                <start>10</start>
+                <end>200</end>
+            </fog>
+        </scene>
+
+        <!-- Origin placed somewhere in the middle of the North Sea  -->
+        <spherical_coordinates>
+            <latitude_deg>56.71897669633431</latitude_deg>
+            <longitude_deg>3.515625</longitude_deg>
+        </spherical_coordinates>
+
+        <light type="directional" name="sun_diffuse_1">
+            <pose>-200 -200 100 0 0 0</pose>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <direction>-0.3 -0.3 -1</direction>
+            <cast_shadows>true</cast_shadows>
+        </light>
+
+        <light type="directional" name="sun_diffuse_2">
+            <pose>-150 -130 50 0 0 0</pose>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <direction>0.5 0.5 -1</direction>
+            <cast_shadows>true</cast_shadows>
+        </light>
+
+        <!-- Bounding box with sea surface -->
+        <include>
+            <uri>model://ocean_box</uri>
+            <pose>0 0 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <name>path_marker1</name>
+            <uri>model://PathMarker</uri>
+            <pose>15.925 -22.31 -11 0 0 -3.130577</pose>
+            <static>true</static>
+        </include>
+
+        <include>
+            <name>path_marker2</name>
+            <uri>model://PathMarker</uri>
+            <pose>29.575 -16.85 -11 0 0 0.301373</pose>
+            <static>true</static>
+        </include>
+
+        <include>
+            <uri>model://Gate_URDF_NEW</uri>
+            <pose>12.74 -23.675 -4 0.050444 0.498656 1.645641</pose>
+            <static>true</static>
+        </include>
+
+        <include>
+            <uri>model://vampire_stake</uri>
+            <pose>22.748215 4.550674 -10 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>model://jiangshi</uri>
+            <pose>28.209999 -20.945000 -4 1.582527 0.022114 -1.083062</pose>
+            <static>true</static>
+        </include>
+
+        <include>
+            <uri>model://crucifix_platform</uri>
+            <pose>17.839634 23.592878 -10.263471 0 0 -3.14</pose>
+            <static>true</static>
+        </include>
+
+        <include>
+            <uri>model://crucifix</uri>
+            <pose>17.838968 23.593578 -10.258084 0 0 -3.14</pose>
+            <static>true</static>
+        </include>
+
+        <include>
+            <uri>model://niot_bins</uri>
+            <pose>36.4 -7.75 -10 1.550940 0 0.379360</pose>
+            <static>true</static>
+        </include>
+
+        <include>
+            <name>pinger1</name>
+            <uri>model://pole_pinger</uri>
+            <pose>21.356283 5.339616 -11.44 0 0 0</pose>
+            <static>true</static>
+        </include>
+
+        <include>
+            <name>pinger2</name>
+            <uri>model://pole_pinger</uri>
+            <pose>18.313801 24.509823 -11.466645 0 0 0</pose>
+            <static>true</static>
+        </include>
+
+        <!-- <include>
+            <uri>model://Buoy_Akash</uri>
+            <pose>27.656416 -21.449871 -4.360870 -3.110457 -0.011932 0.806675</pose>
+            <static>true</static>
+        </include> -->
+
+        <plugin name="underwater_current_plugin" filename="libuuv_underwater_current_ros_plugin.so">
+            <namespace>hydrodynamics</namespace>
+            <constant_current>
+                <topic>current_velocity</topic>
+                <velocity>
+                    <mean>0</mean>
+                    <min>0</min>
+                    <max>5</max>
+                    <mu>0.0</mu>
+                    <noiseAmp>0.0</noiseAmp>
+                </velocity>
+
+                <horizontal_angle>
+                    <mean>0</mean>
+                    <min>-3.141592653589793238</min>
+                    <max>3.141592653589793238</max>
+                    <mu>0.0</mu>
+                    <noiseAmp>0.0</noiseAmp>
+                </horizontal_angle>
+
+                <vertical_angle>
+                    <mean>0</mean>
+                    <min>-3.141592653589793238</min>
+                    <max>3.141592653589793238</max>
+                    <mu>0.0</mu>
+                    <noiseAmp>0.0</noiseAmp>
+                </vertical_angle>
+            </constant_current>
+        </plugin>
+
+        <plugin name="sc_interface" filename="libuuv_sc_ros_interface_plugin.so"/>
+
+    </world>
+</sdf>

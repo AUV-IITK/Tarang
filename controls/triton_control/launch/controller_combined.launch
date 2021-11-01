@@ -1,0 +1,19 @@
+<launch>
+
+  <include file="$(find triton_control)/start_thruster_manager.launch"/>
+  <include file="$(find triton_odometry)/odom_from_sensors_start.launch"/>
+
+  <group ns="triton">
+    <rosparam file="$(find triton_control)/config/pos_pid_control.yaml" command="load"/>
+    <node pkg="triton_control" type="GroundTruth" name="ground_truth" output="screen"></node>
+    <node pkg="triton_control" type="PositionControl" name="position_control" output="screen">
+      <remap from="odom" to="ground_truth"/>
+    </node>
+  </group>
+
+</launch>
+
+
+
+
+

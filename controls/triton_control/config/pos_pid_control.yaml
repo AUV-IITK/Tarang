@@ -1,0 +1,9 @@
+position_control/pos_p: 70.0
+position_control/pos_i: 5.0
+position_control/pos_d: 30.0
+position_control/pos_sat: 50.0
+
+position_control/rot_p: 60.0
+position_control/rot_i: 5.0
+position_control/rot_d: 35.0
+position_control/rot_sat: 25.0

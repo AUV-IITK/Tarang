@@ -1,0 +1,46 @@
+<robot
+  name="pole_pinger">
+  <link
+    name="pole_pinger">
+    <inertial>
+      <origin
+        xyz="0.46114 -0.93656 0.17676"
+        rpy="0 0 0" />
+      <mass
+        value="9.4074" />
+      <inertia
+        ixx="1.15936884713012"
+        ixy="0.000212009082549123"
+        ixz="0.00402192283520853"
+        iyy="1.15951535199421"
+        iyz="-0.00286558981704308"
+        izz="0.0426545299368875" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pole_pinger/meshes/pole_pinger.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pole_pinger/meshes/pole_pinger.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="pole_pinger">
+    <material>Gazebo/Yellow</material>
+    </gazebo>
+</robot>

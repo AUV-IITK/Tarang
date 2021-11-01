@@ -1,0 +1,3 @@
+<launch>
+	<node name="odom_pub" pkg="triton_odometry" type="odom.py" output="screen"/>
+</launch>

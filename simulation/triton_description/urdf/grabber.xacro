@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+ <!-- <xacro:include filename="$(find uuv_gazebo_ros_plugins)/urdf/snippets.xacro"/>  -->
+
+ <xacro:property name="grabber_base_mesh_file" value="file://$(find triton_description)/meshes/grabber_base.STL"/>
+ <xacro:property name="grabber_rod_mesh_file" value="file://$(find triton_description)/meshes/grabber_rod.STL"/>
+
+ <xacro:macro name="grabber_macro" params="robot_namespace *origin">
+
+  <link name="${robot_namespace}/grabber_base_link">
+
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0581581308007431" />
+        <inertia ixx="1.08754904539098E-05" ixy="2.80383338628353E-22" ixz="1.86973606672039E-06"
+        iyy="9.39676567221895E-06" iyz="2.44210051738301E-10" izz="1.09623321548428E-05" />
+    </inertial>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+        <mesh filename= "${grabber_base_mesh_file}" scale = "1 1 1" />
+        </geometry>
+        <material name="grabber_base_color">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+        </material>
+    </visual>
+
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+        <mesh filename= "${grabber_base_mesh_file}" scale = "1 1 1" />
+        </geometry>
+    </collision>
+
+  </link>
+
+  <joint name="$robot_namespace}/grabber_base_joint" type="fixed">
+    <xacro:insert_block name="origin"/>
+    <parent link="${robot_namespace}/base_link" />
+    <child link="${robot_namespace}/grabber_base_link" />
+  </joint>
+
+
+  <link name="${robot_namespace}/grabber_rod">
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0402557146240347" />
+      <inertia ixx="5.18433896507488E-06" ixy="-3.69995193340087E-09" ixz="2.13599582859241E-06"
+        iyy="8.27653293058903E-06" iyz="-1.84307130627779E-09" izz="6.51108299328088E-06" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="${grabber_rod_mesh_file}" scale = "1 1 1" />
+      </geometry>
+      <material name="graaber_rod_color">
+        <color rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="${grabber_rod_mesh_file}" scale = "1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+
+  <joint name="${robot_namespace}/grabber_rod_joint" type="prismatic">
+    <origin xyz="0 0 -0.03" rpy="0 3.14159265 0" />
+    <parent link="${robot_namespace}/grabber_base_link" />
+    <child link="${robot_namespace}/grabber_rod" />
+    <axis xyz="0 0 1" />
+    <limit
+        lower="0"
+        upper="0.01"
+        effort="10"
+        velocity="5" />
+  </joint>
+
+ <xacro:grabber_claw_macro robot_namespace="${robot_namespace}" claw_id="0">
+    <origin xyz="0.013 0 0.012" rpy="-1.570796 0 0"/>
+ </xacro:grabber_claw_macro>
+
+ <xacro:grabber_claw_macro robot_namespace="${robot_namespace}" claw_id="1">
+    <origin xyz="0 -0.013 0.012" rpy="1.570796 3.141592 1.570796" />
+ </xacro:grabber_claw_macro>
+
+ <xacro:grabber_claw_macro robot_namespace="${robot_namespace}" claw_id="2">
+    <origin xyz="0 0.013 0.012" rpy="1.570796 3.141592 -1.570796" />
+ </xacro:grabber_claw_macro>
+
+ <xacro:grabber_claw_macro robot_namespace="${robot_namespace}" claw_id="3">
+    <origin xyz="-0.013 0 0.012" rpy="-1.570796 0 3.141592" />
+ </xacro:grabber_claw_macro>
+
+ <gazebo>
+    <plugin filename="libgrabber_control_plugin.so" name="grabber_control">
+    </plugin>
+ </gazebo>
+
+ </xacro:macro>
+</robot>

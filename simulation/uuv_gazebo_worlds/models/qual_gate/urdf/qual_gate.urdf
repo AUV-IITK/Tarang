@@ -1,0 +1,46 @@
+<robot
+  name="qual_gate">
+  <link
+    name="qual_gate">
+    <inertial>
+      <origin
+        xyz="2.3965E-07 -1.3189 1.0005"
+        rpy="0 0 0" />
+      <mass
+        value="18.875" />
+      <inertia
+        ixx="22.8065287480022"
+        ixy="-0.000111681399767615"
+        ixz="-0.000119421608847911"
+        iyy="14.6642752487651"
+        iyz="0.00211707599867418"
+        izz="8.15176829177702" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://qual_gate/meshes/qual_gate.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://qual_gate/meshes/qual_gate.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo>
+    <static>true</static>
+  </gazebo>
+</robot>

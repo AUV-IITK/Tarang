@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name="ocean_box">
+    <static>true</static>
+    <link name="link">
+      <visual name="surface">
+        <cast_shadows>false</cast_shadows>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>100 100 .1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/water.material</uri>
+            <name>UUVSimulator/StaticDeepWater</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

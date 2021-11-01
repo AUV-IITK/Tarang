@@ -1,0 +1,3 @@
+<launch>
+	<node name="dvl_publisher" pkg="triton_odometry" type="dvl_data.py" output="screen"/>
+</launch>

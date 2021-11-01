@@ -1,0 +1,49 @@
+<robot
+  name="bucket1">
+  <link
+    name="bucket1">
+    <inertial>
+      <origin
+        xyz="1.6389E-31 -8.31828789402452E-16 0.074656"
+        rpy="0 0 0" />
+      <mass
+        value="1.53" />
+      <inertia
+        ixx="0.0661248278368177"
+        ixy="-1.08329395295864E-31"
+        ixz="2.88085329833831E-32"
+        iyy="0.0661248278368195"
+        iyz="9.8598571098971E-17"
+        izz="0.10346149980676" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucket1/meshes/bucket1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucket1/meshes/bucket1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="bucket1">
+    <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo>
+    <static>true</static>
+</gazebo>
+</robot>

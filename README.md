@@ -49,12 +49,36 @@ catkin build
     ├── utils
     ├── vision
     ├── README.md
-    ├── .rosdep
     └── requirements.txt
 ```
 
 The branch when not doing any development work would be `master` on `Tarang`.
-
+### Simulation and Control Guidlines
+1.First  spawn the world by using command.
+```
+roslaunch uuv_gazebo_worlds empty_underwater_world.launch
+```
+2.Spawn the bot using command
+```
+roslaunch triton_description upload.launch
+```
+3.Launch controller.launch using command( it starts Ground Truth)
+```
+roslaunch triton_control  controller.launch
+```
+4.Launch thruster manager using command
+```
+roslaunch triton_control start_thruster_manager.launch
+```
+5.Launch Odometry using command
+```
+roslaunch triton_odometry odom_start.launch
+```
+if error comes then try: 
+```
+whereis python3
+sudo ln -s /usr/bin/python3 /usr/bin/python
+```
 ### Contribution Guidelines
 
 To get started with contributing to this repository, look out for open issues here. Kindly read the Developer's Guide before sending a pull request! :)

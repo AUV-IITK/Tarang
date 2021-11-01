@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/shubham/AUV/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/AnahitaPlus/hardware_layer/hardware_arduino/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/AnahitaPlus/hardware_layer/hardware_dvl_ethernet/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/AnahitaPlus/vision_layer/image_undistort/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/AnahitaPlus/navigation_layer/mapping/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/AnahitaPlus/navigation_layer/odom_dvl_imu/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/AnahitaPlus/debug_layer/pid_calibration/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/uuv_simulator/uuv_gazebo_plugins/uuv_gazebo_plugins/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/uuv_simulator/uuv_gazebo_plugins/uuv_gazebo_ros_plugins/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/uuv_simulator/uuv_sensor_plugins/uuv_sensor_ros_plugins/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/uuv_simulator/uuv_world_plugins/uuv_world_plugins/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/uuv_simulator/uuv_world_plugins/uuv_world_ros_plugins/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/AnahitaPlus/vision_layer/vision_commons/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/AnahitaPlus/vision_layer/vision_fusion/include/**",
+        "/home/shubham/AUV/catkin_ws/src/uuv_sim/AnahitaPlus/vision_layer/vision_tasks/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

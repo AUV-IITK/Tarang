@@ -1,0 +1,49 @@
+<robot
+  name="gate_black">
+  <link
+    name="gate_black">
+    <inertial>
+      <origin
+        xyz="0.73 7.34151509116515E-35 1.199E-18"
+        rpy="0 0 0" />
+      <mass
+        value="2.336" />
+      <inertia
+        ixx="0.000622933333333333"
+        ixy="-1.15648231731787E-18"
+        ixz="3.50987396139624E-34"
+        iyy="0.415262933333333"
+        iyz="-2.18936558697235E-20"
+        izz="0.415262933333333" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gate_black/meshes/gate_black.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gate_black/meshes/gate_black.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="gate_black">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo>
+  <static>true</static>
+</gazebo>
+</robot>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.0-0-g9aa0fdb  Build Version: 1.5.7004.21443
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Gate_URDF_NEW">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.168322864208956 -2.1192209241693 2.20919586667273"
+        rpy="0 0 0" />
+      <mass
+        value="12.801733573456" />
+      <inertia
+        ixx="2.52655639008521"
+        ixy="3.91009741138073E-10"
+        ixz="-4.22941253318381"
+        iyy="9.63160274761318"
+        iyz="2.3275950760761E-10"
+        izz="7.11378358707341" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Gate_URDF_NEW/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Gate_URDF_NEW/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Left">
+    <inertial>
+      <origin
+        xyz="-1.72084568816899E-15 0.7625 -7.105427357601E-15"
+        rpy="0 0 0" />
+      <mass
+        value="6.20904372055487" />
+      <inertia
+        ixx="1.20533733871674"
+        ixy="-3.29366482151843E-34"
+        ixz="-6.52530446799852E-52"
+        iyy="0.00402346033091955"
+        iyz="1.40026273599015E-33"
+        izz="1.20533733871674" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Gate_URDF_NEW/meshes/Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Gate_URDF_NEW/meshes/Left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left"
+    type="continuous">
+    <origin
+      xyz="-0.387916034858449 -2.1192209241693 0.0175757150527073"
+      rpy="1.5707963267949 -0.536941728756498 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Left" />
+    <axis
+      xyz="0 1 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="Middle">
+    <inertial>
+      <origin
+        xyz="-6.32827124036339E-15 0.3048 -1.77635683940025E-15"
+        rpy="0 0 0" />
+      <mass
+        value="1.23555551703134" />
+      <inertia
+        ixx="0.038461570623003"
+        ixy="-1.8485162729718E-35"
+        ixz="0"
+        iyy="0.000398565498683969"
+        iyz="6.54920110171591E-35"
+        izz="0.038461570623003" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Gate_URDF_NEW/meshes/Middle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Gate_URDF_NEW/meshes/Middle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Middle"
+    type="fixed">
+    <origin
+      xyz="0.171988973006556 -2.13896595145136 1.46041339340233"
+      rpy="1.5707963267949 -0.536941728756498 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Middle" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="Right">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-15 0.7625 -7.80220332785575E-12"
+        rpy="0 0 0" />
+      <mass
+        value="6.20904372055487" />
+      <inertia
+        ixx="1.20533733871674"
+        ixy="4.2453167721409E-15"
+        ixz="-4.34385773452136E-26"
+        iyy="0.00402346033091955"
+        iyz="1.2291990986631E-11"
+        izz="1.20533733871674" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Gate_URDF_NEW/meshes/Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Gate_URDF_NEW/meshes/Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right"
+    type="continuous">
+    <origin
+      xyz="2.36005192355092 -2.11922092418566 1.65338624795541"
+      rpy="1.5707963267949 -0.536941728756498 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Right" />
+    <axis
+      xyz="0 1 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <gazebo reference="Right">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="Left">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="Middle">
+    <material>Gazebo/Red</material>
+  </gazebo>
+</robot>
