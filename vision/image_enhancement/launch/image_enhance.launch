@@ -1,0 +1,6 @@
+<launch>
+<!-- <node name="image_publisher" pkg="image_enhancement" type="publisher" output="screen"/> -->
+<node name="enhancer" pkg="image_enhancement" type="enhancer" output="screen"/>
+<!-- <node name="image_subscriber" pkg="image_enhancement" type="subscriber" output="screen"/> -->
+<rosparam file="$(find image_enhancement)/cfg/parameters.yaml" />
+</launch>
