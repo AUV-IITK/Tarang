@@ -59,6 +59,7 @@ The `xsens_driver` node is the main node that interfaces with the AHRS and publi
 ## Running the Package
 
 The package has a single launch file `xsens_driver.launch`. Run it using `roslaunch xsens_driver xsens_driver.launch`.
+NOTE- Either you need to add your user in ttyusb for the Script to be able to use MT device or run everything in superuser access to not get any error.Because sometimes it is unable to access device due to permission deny.
 
 #### Arguments
 
